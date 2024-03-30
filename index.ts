@@ -6,28 +6,27 @@ let condition = true;
 
 while(condition){
     let addTask = await inquirer.prompt([
-        {
-            name: `todo`,
-            type: `input`,
-            message: `What you want to add in your todos`,
-        },
-        {
-            name:`addMore`,
-            type:`confirm`,
-            message:`Do you want to add more?`,
-            default:`false`,
-        },
-        {
-            name:`delete`,
-            type:`confirm`,
-            message:`Do you want to delete the last one?`,
-            default:`false`,
-        },
-    ]);
-    todos.push(addTask.todo);
-    condition = addTask.addMore;
-    if (addTask.delete) {
-        todos.pop();
-    }
+    {
+        name:`todos`,
+        type:`input`,
+        message:`What do you want to add in Todos?`,
+    },
+    {
+        name:`addMore`,
+        type:`confirm`,
+        message:`Do you want to add more?`,
+        default:true,
+    },
+    {
+        name:`delete`,
+        type:`confirm`,
+        message:`Do you want to delete the last one?`,
+        default:true,
+    },
+]);
+todos.push(addTask.todos);
+if(addTask.delete){
+    todos.pop();
 }
 console.log(todos);
+}

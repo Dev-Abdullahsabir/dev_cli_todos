@@ -1,6 +1,6 @@
 {
   "name": "dev_cli_todos",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "This a cli based todos",
   "main": "index.js",
   "type": "module",
